@@ -1,9 +1,12 @@
-FROM openjdk:25-ea-4-jdk-oraclelinux9
+# Use a base JDK image
+FROM openjdk:25-jdk-slim
 
+# Set working directory
 WORKDIR /app
 
-COPY target/miniapp-0.0.1-SNAPSHOT.jar app.jar
+# Copy and build the app (assumes you have built with Maven already)
+COPY target/*.jar app.jar
 
 EXPOSE 8080
-
+# Run the app
 ENTRYPOINT ["java", "-jar", "app.jar"]
