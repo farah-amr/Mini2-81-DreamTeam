@@ -43,6 +43,8 @@ public class CaptainController {
         return captainService.getCaptainByLicenseNumber(licenseNumber);
     }
 
+
+
     @PutMapping("/update/{id}")
     public Captain updateCaptain(@PathVariable Long id, @RequestBody Captain captain) {
         return captainService.updateCaptain(id, captain);
