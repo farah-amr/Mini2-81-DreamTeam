@@ -2,7 +2,8 @@ package com.example.demo.models;
 import jakarta.persistence.*;
 
 
-
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -12,23 +13,32 @@ public class Customer {
     private Long id;
 
     private String name;
+
     private String email;
+
     private String phoneNumber;
 
-    // Constructors
-    public Customer() {}
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
+    private List<Trip> trips;
 
+    // Default constructor
+    public Customer() {
+    }
+
+    // Partial constructor
     public Customer(String name, String email, String phoneNumber) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    public Customer(Long id, String name, String email, String phoneNumber) {
+    // Full constructor
+    public Customer(Long id, String name, String email, String phoneNumber, List<Trip> trips) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.trips = trips;
     }
 
     // Getters and Setters
@@ -45,8 +55,8 @@ public class Customer {
     }
 
     public void setName(String name) {
-         this.name = name;
-     }
+        this.name = name;
+    }
 
     public String getEmail() {
         return email;
@@ -58,4 +68,17 @@ public class Customer {
 
     public String getPhoneNumber() {
         return phoneNumber;
-    }}
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
+    }
+
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
+}

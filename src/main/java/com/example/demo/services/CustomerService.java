@@ -40,4 +40,17 @@ public class CustomerService {
     public List<Customer> findCustomersByPhonePrefix(String prefix) {
         return customerRepository.findByPhoneNumberStartingWith(prefix);
     }
+    public Customer updateCustomer(Long id, Customer customer) {
+        // First, try to find the existing customer
+        Customer existingCustomer = customerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Customer not found with id: " + id));
+
+        // Update fields
+        existingCustomer.setName(customer.getName());
+        existingCustomer.setEmail(customer.getEmail());
+        existingCustomer.setPhoneNumber(customer.getPhoneNumber());
+
+        // Save and return the updated customer
+        return customerRepository.save(existingCustomer);
+    }
 }
