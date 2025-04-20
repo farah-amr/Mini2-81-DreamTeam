@@ -1,9 +1,7 @@
 package com.example.demo.models;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+import java.util.List;
 
 @Entity
 public class Captain {
@@ -15,7 +13,8 @@ public class Captain {
     private String name;
     private String licenseNumber;
     private Double avgRatingScore;
-
+    @OneToMany(mappedBy = "captain")
+    private List<Trip> trips; // 👈 this is the important part
     // Constructors
     public Captain() {}
 

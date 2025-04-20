@@ -3,7 +3,6 @@ import com.example.demo.models.Trip;
 import com.example.demo.services.TripService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
