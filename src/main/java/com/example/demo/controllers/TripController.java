@@ -33,10 +33,16 @@ public class TripController {
         return tripService.getTripById(id);
     }
 
+    // Update trip details
+    @PutMapping("/update/{id}")
+    public Trip updateTrip(@PathVariable Long id, @RequestBody Trip trip) {
+        return tripService.updateTrip(id, trip);
+    }
 
     @DeleteMapping("/delete/{id}")
     public void deleteTrip(@PathVariable Long id) {
         tripService.deleteTrip(id);
+
     }
 
     @GetMapping("/findByDateRange")
