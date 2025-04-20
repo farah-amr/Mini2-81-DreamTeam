@@ -124,7 +124,7 @@ class Mini2ApplicationTests {
 
 		// paymentRepository.deleteAll();
 		// tripRepository.deleteAll();
-		//ratingRepository.deleteAll();
+		ratingRepository.deleteAll();
 		// captainRepository.deleteAll();
 		// customerRepository.deleteAll();
 	}

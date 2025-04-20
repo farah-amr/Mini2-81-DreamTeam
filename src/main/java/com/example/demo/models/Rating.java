@@ -1,13 +1,13 @@
 package com.example.demo.models;
 
-import jakarta.persistence.Id;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 
-@Document(collection = "rating")
+@Document(collection = "ratings")
 public class Rating {
     @Id
     private String id = UUID.randomUUID().toString();
@@ -20,13 +20,9 @@ public class Rating {
     public Rating() {
     }
 
-    public Rating(String entityType, Long entityId, int score, String comment, LocalDateTime timestamp) {
-        this.entityType = entityType;
-        this.entityId = entityId;
-        this.score = score;
-        this.comment = comment;
-        this.timestamp = timestamp;
+    public Rating(long l, String customer, int i, String s, LocalDateTime now) {
     }
+
 
     public String getId() {
         return id;
