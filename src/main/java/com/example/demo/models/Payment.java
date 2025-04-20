@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "payment")
+@Table(name = "payments")
 public class Payment {
 
     @Id
@@ -38,6 +38,9 @@ public class Payment {
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
         this.trip = trip;
+    }
+
+    public Payment(double v, String bankTransfer, boolean b) {
     }
 
     public Long getId() {

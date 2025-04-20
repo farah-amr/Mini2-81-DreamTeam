@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "captains")
 public class Captain {
 
     @Id
@@ -28,6 +29,9 @@ public class Captain {
         this.name = name;
         this.licenseNumber = licenseNumber;
         this.avgRatingScore = avgRatingScore;
+    }
+
+    public Captain(String johnDoe, String number, double v) {
     }
 
     // Getters and Setters
