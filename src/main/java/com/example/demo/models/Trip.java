@@ -44,6 +44,13 @@ public class Trip {
         this.customer = customer;
     }
 
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost) {
+        this.tripDate = tripDate;
+        this.origin = origin;
+        this.destination = destination;
+        this.tripCost = tripCost;
+    }
+
     public Long getId() {
         return id;
     }

@@ -31,6 +31,12 @@ public class Captain {
         this.avgRatingScore = avgRatingScore;
     }
 
+    public Captain(String name, String licenseNumber, Double avgRatingScore) {
+        this.name = name;
+        this.licenseNumber = licenseNumber;
+        this.avgRatingScore = avgRatingScore;
+    }
+
     // Getters and Setters
     public Long getId() {
         return id;
