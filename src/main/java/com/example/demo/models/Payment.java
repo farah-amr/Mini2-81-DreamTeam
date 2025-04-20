@@ -1,7 +1,11 @@
 package com.example.demo.models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
+@Table(name = "payment")
 public class Payment {
 
     @Id
@@ -9,11 +13,14 @@ public class Payment {
     private Long id;
 
     private Double amount;
-    private String paymentMethod; // e.g., "cash", "card"
-    private Boolean paymentStatus; // true = paid, false = pending
+
+    private String paymentMethod;
+
+    private Boolean paymentStatus;
 
     @OneToOne
-    @JoinColumn(name = "trip_id")
+    @JoinColumn(name = "trip_id", referencedColumnName = "id")
+    @JsonIgnore
     private Trip trip;
 
     public Payment() {}
@@ -33,5 +40,43 @@ public class Payment {
         this.trip = trip;
     }
 
-    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public String getPaymentMethod() {
+        return paymentMethod;
+    }
+
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public Trip getTrip() {
+        return trip;
+    }
+
+    public void setTrip(Trip trip) {
+        this.trip = trip;
+    }
+
+    public Boolean getPaymentStatus() {
+        return paymentStatus;
+    }
+
+    public void setPaymentStatus(Boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
+    }
 }

@@ -1,5 +1,5 @@
 # Use a base JDK image
-FROM openjdk:25-jdk-slim
+FROM openjdk:25-ea-4-jdk-oraclelinux9
 
 # Set working directory
 WORKDIR /app
