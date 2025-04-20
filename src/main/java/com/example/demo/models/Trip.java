@@ -44,9 +44,6 @@ public class Trip {
         this.customer = customer;
     }
 
-    public Trip(LocalDateTime now, String originA, String destinationA, double v) {
-    }
-
     public Long getId() {
         return id;
     }

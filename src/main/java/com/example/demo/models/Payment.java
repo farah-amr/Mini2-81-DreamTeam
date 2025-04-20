@@ -16,6 +16,12 @@ public class Payment {
 
     private String paymentMethod;
 
+    public Payment(Double amount, String paymentMethod, Boolean paymentStatus) {
+        this.amount = amount;
+        this.paymentMethod = paymentMethod;
+        this.paymentStatus = paymentStatus;
+    }
+
     private Boolean paymentStatus;
 
     @OneToOne
@@ -38,9 +44,6 @@ public class Payment {
         this.paymentMethod = paymentMethod;
         this.paymentStatus = paymentStatus;
         this.trip = trip;
-    }
-
-    public Payment(double v, String bankTransfer, boolean b) {
     }
 
     public Long getId() {
