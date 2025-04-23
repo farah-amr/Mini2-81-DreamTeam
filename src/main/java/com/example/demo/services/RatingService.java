@@ -26,6 +26,7 @@ public class RatingService {
         if (optionalRating.isPresent()) {
             Rating existing = optionalRating.get();
             existing.setScore(updatedRating.getScore());
+            existing.setComment(updatedRating.getComment());
             existing.setTimestamp(updatedRating.getTimestamp());
             return ratingRepository.save(existing);
         } else {
