@@ -21,6 +21,7 @@ public class CaptainService {
         return captainRepository.save(captain);
     }
 
+
     public List<Captain> getAllCaptains() {
         return captainRepository.findAll();
     }

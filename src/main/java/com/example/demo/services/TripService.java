@@ -46,8 +46,8 @@ public class TripService {
         tripRepository.deleteById(id);
     }
 
-    public List<Trip> findTripsWithinDateRange(LocalDateTime start, LocalDateTime end) {
-        return tripRepository.findByTripDateBetween(start, end);
+    public List<Trip> findTripsWithinDateRange(LocalDateTime startDate, LocalDateTime endDate) {
+        return tripRepository.findByTripDateBetween(startDate, endDate);
     }
 
     public List<Trip> findTripsByCaptainId(Long captainId) {

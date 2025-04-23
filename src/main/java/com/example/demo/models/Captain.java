@@ -37,7 +37,6 @@ public class Captain {
         this.avgRatingScore = avgRatingScore;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -70,5 +69,11 @@ public class Captain {
         this.avgRatingScore = avgRatingScore;
     }
 
+    public List<Trip> getTrips() {
+        return trips;
+    }
 
+    public void setTrips(List<Trip> trips) {
+        this.trips = trips;
+    }
 }
