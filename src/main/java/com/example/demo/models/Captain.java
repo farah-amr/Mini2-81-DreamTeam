@@ -14,9 +14,9 @@ public class Captain {
     private String name;
     private String licenseNumber;
     private Double avgRatingScore;
-    @OneToMany(mappedBy = "captain")
-    private List<Trip> trips; // 👈 this is the important part
-    // Constructors
+    @OneToMany(mappedBy = "captain", cascade = CascadeType.ALL)
+    private List<Trip> trips;
+
     public Captain() {}
 
     public Captain(String name, String licenseNumber) {

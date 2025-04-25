@@ -15,7 +15,7 @@ public class Rating {
     private String entityType;
     private int score;
     private String comment;
-    private LocalDateTime timestamp = LocalDateTime.now();
+    private LocalDateTime ratingDate = LocalDateTime.now();
 
     public Rating() {
     }
@@ -64,11 +64,11 @@ public class Rating {
         this.comment = comment;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public LocalDateTime getRatingDate() {
+        return ratingDate;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setRatingDate(LocalDateTime ratingDate) {
+        this.ratingDate = ratingDate;
     }
 }

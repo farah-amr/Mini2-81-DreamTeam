@@ -27,7 +27,7 @@ public class RatingService {
             Rating existing = optionalRating.get();
             existing.setScore(updatedRating.getScore());
             existing.setComment(updatedRating.getComment());
-            existing.setTimestamp(updatedRating.getTimestamp());
+            existing.setRatingDate(updatedRating.getRatingDate());
             return ratingRepository.save(existing);
         } else {
             throw new RuntimeException("Rating with ID " + id + " not found.");

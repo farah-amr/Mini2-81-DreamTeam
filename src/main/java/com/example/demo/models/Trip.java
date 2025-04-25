@@ -23,15 +23,19 @@ public class Trip {
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
+    @OneToOne(mappedBy = "trip", cascade = CascadeType.ALL)
+    private Payment payment;
+
     public Trip() {}
 
-    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
+    public Trip(LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer, Payment payment) {
         this.tripDate = tripDate;
         this.origin = origin;
         this.destination = destination;
         this.tripCost = tripCost;
         this.captain = captain;
         this.customer = customer;
+        this.payment = payment;
     }
 
     public Trip(Long id, LocalDateTime tripDate, String origin, String destination, Double tripCost, Captain captain, Customer customer) {
@@ -106,6 +110,12 @@ public class Trip {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
-// Getters and Setters
-    // (You can auto-generate them with Alt+Insert)
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
 }

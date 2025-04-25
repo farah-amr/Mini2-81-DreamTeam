@@ -22,18 +22,15 @@ public class Customer {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private List<Trip> trips;
 
-    // Default constructor
     public Customer() {
     }
 
-    // Partial constructor
     public Customer(String name, String email, String phoneNumber) {
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
 
-    // Full constructor
     public Customer(Long id, String name, String email, String phoneNumber, List<Trip> trips) {
         this.id = id;
         this.name = name;
@@ -42,7 +39,6 @@ public class Customer {
         this.trips = trips;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
